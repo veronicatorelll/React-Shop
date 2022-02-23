@@ -6,8 +6,8 @@ import React from 'react';
 function App() {
   return (
     <div className="App">
-      Webshop in React
-    </div>
+     <h2>Webshop i React</h2>
+    </div> 
   );
 }
 
