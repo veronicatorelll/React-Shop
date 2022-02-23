@@ -1,12 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-import React from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Header from './components/Header';
+import Products from './pages/Products';
+import Product from "./pages/Product"
+import Footer from './components/Footer';
 
 
 function App() {
   return (
     <div className="App">
-      Webshop in React
+      <BrowserRouter>
+        <Header />
+
+        <Routes>
+          <Route path="/" element={<Products />} />
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
