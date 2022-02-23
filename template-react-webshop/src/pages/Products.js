@@ -26,14 +26,14 @@ function Products() {
         {
             products.map((product) => (
               <div key={product.id}>
-                <Link to={`/${product.id}`}>
-                  <p>{product.title}</p>
-                  <p>{product.description}</p>
-                  <p>{product.price}</p>
-                  <p>{product.storage}</p>
-                  <div className="bild">
-                    <img src={product.url} alt="bild saknas" />
+                  <p>Title: {product.title}</p>
+                  <p>Description: {product.description}</p>
+                  <p>Price: {product.price}</p>
+                  <p>Storage: {product.storage}</p>
+                  <div className="picture">
+                    <img src={product.url} alt="missing picture" />
                   </div>
+                  <Link to={`/product/${product.id}`}> More info
                   </Link>
               </div>
             ))
