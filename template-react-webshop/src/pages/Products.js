@@ -25,12 +25,15 @@ function Products() {
         <h1>Products</h1>
         {
             products.map((product) => (
-              <div>
+              <div key={product.id}>
                 <Link to={`/${product.id}`}>
                   <p>{product.title}</p>
                   <p>{product.description}</p>
                   <p>{product.price}</p>
                   <p>{product.storage}</p>
+                  <div className="bild">
+                    <img src={product.url} alt="bild saknas" />
+                  </div>
                   </Link>
               </div>
             ))
