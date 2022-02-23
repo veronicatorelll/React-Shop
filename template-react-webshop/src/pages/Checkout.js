@@ -1,6 +1,5 @@
 //Veronicas del
-//This components is a page. Is shownone one at a time, through routing
-
+//Skapar en enskild component för formuläret
 import React from 'react'
 
 function Checkout() {
