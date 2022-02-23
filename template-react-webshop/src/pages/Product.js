@@ -1,5 +1,5 @@
 //Veronicas del
-//This component is a page. Is shownone one at a time, through routing
+//This component is a page. Is shown one at a time, through routing
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom';
 
@@ -7,6 +7,9 @@ import {useParams} from 'react-router-dom';
 function Product() {
     const [product, setProduct] = useState({});
     const params = useParams();
+    const handleClick = (e) => {
+      console.log("You clicked", e)
+    }
 
     const fetchData = async () => {
         try {
@@ -29,8 +32,11 @@ function Product() {
         <div>
             <h1>Enskild produkt med id: {params.testid}</h1>
             <p>{product.content}</p>
+            <button onClick={handleClick}>Add to cart</button>
         </div>
     )
+
+
 }
 
 export default Product
