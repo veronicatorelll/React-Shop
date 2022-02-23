@@ -4,7 +4,7 @@ import React from 'react'
 function Footer() {
   return (
     <div>
-      <p>Footer</p>
+      <p className='copy'>&copy; Copyright, Greggan</p>
     </div>
   )
 }

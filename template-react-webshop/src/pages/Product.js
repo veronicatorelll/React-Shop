@@ -1,7 +1,9 @@
 //Veronicas del
 //This component is a page. Is shown one at a time, through routing
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
+import {Link} from "react-router-dom";
+
 
 
 function Product() {
@@ -13,7 +15,7 @@ function Product() {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('https://codexplained.se/electronics.php' + params.testid);
+            const response = await fetch('https://codexplained.se/electronics.php?id='+params.testid);
             const data = await response.json();
             console.log(data);
 
@@ -32,7 +34,12 @@ function Product() {
         <div>
             <h1>Enskild produkt med id: {params.testid}</h1>
             <p>{product.content}</p>
+            <div className="picture">
+                <img src={product.url} />
+            </div>
             <button onClick={handleClick}>Add to cart</button>
+            <Link to={`/cart/${product.id}`}>
+            </Link>
         </div>
     )
 

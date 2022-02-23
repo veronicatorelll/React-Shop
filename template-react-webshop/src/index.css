@@ -4,9 +4,26 @@
   margin: 0;
   font-family: "Quicksand";
   color: #333;
+  margin-left: 2px;
+  
 }
 
-.picture {
-  width: 100px;
-  height: 200px;
+
+.picture img {
+  width: 300px;
+  height: 100%;
+  
+  
+}
+
+
+p {
+    width: 30%;
+    height: 28px;
+    
+  
+  }
+
+button a:hover{
+  transform: scale(1.1);
 }

@@ -25,13 +25,15 @@ function Products() {
         <h1>Products</h1>
         {
             products.map((product) => (
-              <div>
-                <Link to={`/${product.id}`}>
-                  <p>{product.title}</p>
-                  <p>{product.description}</p>
-                  <p>{product.price}</p>
-                  <p>{product.storage}</p>
-                  </Link>
+              <div key={product.id}>
+                  <p>Title: {product.title}</p>
+                  <p>Description: {product.description}</p>
+                  <p>Price: {product.price}</p>
+                  <p>Storage: {product.storage}</p>
+                  <div className="picture">
+                    <img src={product.url} alt="missing picture" />
+                  </div>
+                 
               </div>
             ))
         }
