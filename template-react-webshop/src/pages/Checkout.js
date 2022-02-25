@@ -9,7 +9,7 @@ function Checkout() {
   return (
     <div>
       <h2>Checkout</h2>
-      <Link to ="/products">Continue Shopping!</Link>
+      <Link to ="/">Continue Shopping!</Link>
       </div>
   )
 }

@@ -18,7 +18,9 @@ function App() {
           <Route path="/" element={<Products />} />
           <Route path="/product/:testid" element={<Product />} />
           <Route path="/Cart" element={<Cart />} /> 
-          {/* Får inte cart-länk att funka/V */}
+          <Route path="/Checkout" element={<Checkout />} /> 
+
+
         </Routes>
 
         <Footer />
