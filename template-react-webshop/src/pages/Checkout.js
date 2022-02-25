@@ -4,7 +4,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-
 function Checkout() {
   return (
     <div>
@@ -12,6 +11,7 @@ function Checkout() {
       <Link to ="/">Continue Shopping!</Link>
       </div>
   )
+
 }
 
 export default Checkout

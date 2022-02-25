@@ -22,7 +22,7 @@ function Products() {
 
   return (
     <div>
-        <h1>Products</h1>
+        <h1>All Products</h1>
         {
             products.map((product) => (
               <div key={product.id}>

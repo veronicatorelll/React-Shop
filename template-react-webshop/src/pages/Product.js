@@ -27,10 +27,15 @@ function Product() {
 
     return (
         <div>
-            <h1>Enskild produkt med id: {params.testid}</h1>
-            <p>{product.content}</p>
+            <h1>Product Page</h1>
+
+            <h3>{product.title}</h3>
+            <p>Description: {product.description}</p>
+            <p>Price: {product.price}</p>
+            <p>Storage: {product.storage}</p>
+
             <div className="picture">
-                <img src={product.url} />
+               <img src={product.url} />
             </div>
             <Link to="/cart">Add to cart</Link>
 

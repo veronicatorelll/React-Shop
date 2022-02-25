@@ -8,6 +8,7 @@ import Cart from './components/Cart';
 import Checkout from './pages/Checkout';
 
 
+
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
           <Route path="/product/:testid" element={<Product />} />
           <Route path="/Cart" element={<Cart />} /> 
           <Route path="/Checkout" element={<Checkout />} /> 
+
 
 
         </Routes>
