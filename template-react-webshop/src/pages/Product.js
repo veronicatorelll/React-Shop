@@ -10,7 +10,7 @@ function Product() {
     const [product, setProduct] = useState({});
     const params = useParams();
     const handleClick = (e) => {
-      console.log("You clicked", e)
+      console.log("You clicked me", e)
     }
 
     const fetchData = async () => {
