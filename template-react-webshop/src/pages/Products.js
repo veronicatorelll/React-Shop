@@ -31,12 +31,10 @@ function Products() {
                   <p>Price: {product.price}</p>
                   <p>Storage: {product.storage}</p>
                   <div className="picture">
-                  <img src={product.url} alt="missing picture" />
-                    
+                    <img src={product.url} alt="missing picture" />
                   </div>
-
-                 <Link to={`/product/${product.id}`}>Go to product
-                 </Link>
+                  <button>Add to Cart</button>
+                 <Link to={`/product/${product.id}`}>Go to product</Link>
               </div>
             ))
         }
