@@ -1,5 +1,4 @@
 //Veronicas del
-//This component is a page. Is shown one at a time, through routing
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {Link} from "react-router-dom";
@@ -9,37 +8,42 @@ import {Link} from "react-router-dom";
 function Product() {
     const [product, setProduct] = useState({});
     const params = useParams();
-    const handleClick = (e) => {
-      console.log("You clicked", e)
-    }
+    
 
     const fetchData = async () => {
         try {
             const response = await fetch('https://codexplained.se/electronics.php?id='+params.testid);
             const data = await response.json();
-            console.log(data);
 
             setProduct(data);
         } catch(error) {
-            console.log(error);
         }
     }
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, );
 
 
     return (
         <div>
-            <h1>Enskild produkt med id: {params.testid}</h1>
-            <p>{product.content}</p>
+            <h1>Product Page</h1>
+
+            <h3>{product.title}</h3>
+            <p>Description: {product.description}</p>
+            <p>Price: {product.price}</p>
+            <p>Storage: {product.storage}</p>
+
             <div className="picture">
-                <img src={product.url} />
+               <img src={product.url} />
             </div>
-            <button onClick={handleClick}>Add to cart</button>
-            <Link to={`/cart/${product.id}`}>
-            </Link>
+            <Link to="/cart">Add to cart</Link>
+
+
+            
+
+            
+
         </div>
     )
 
