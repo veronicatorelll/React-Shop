@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Cart() {
   return (
-    <div>Cart</div>
+    <div>
+      </div>
   )
 }
 
 export default Cart
+

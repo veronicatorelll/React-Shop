@@ -3,16 +3,13 @@
 //Formulär för personuppgifter också? 
 import React from 'react';
 import {Link} from "react-router-dom";
-import Products from './Products';
 
 
 function Checkout() {
   return (
     <div>
       <h2>Checkout</h2>
-      <button>Continue shopping!</button>
-      <Link to={`/products/${Products.id}`}>
-            </Link>
+      <Link to ="/products">Continue Shopping!</Link>
       </div>
   )
 }
