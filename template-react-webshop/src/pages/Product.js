@@ -35,7 +35,7 @@ function Product() {
             <p>Storage: {product.storage}</p>
 
             <div className="picture">
-               <img src={product.url} />
+               <img src={product.url} alt="missing picture"/>
             </div>
             <Link to="/cart">Add to cart</Link>
 
