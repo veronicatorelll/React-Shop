@@ -1,12 +1,12 @@
 import {Link} from "react-router-dom"
-// import {FaShoppingCart} from "react-icons/fa"
+import {FaShoppingCart} from "react-icons/fa"
 
 function Header() {
   return (
     <div>
       <Link to ="/"><h2>Header</h2></Link>
       <Link to="/cart">
-        {/* <FaShoppingCart /> */}
+        {<FaShoppingCart />}
         </Link>
 
 
