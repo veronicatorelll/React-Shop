@@ -35,7 +35,7 @@ function Products({addToCart}) {
                     <img src={product.url} alt="missing picture" />
                   </div>
 
-                  <button onClick={() => addToCart(product.id)}>addToCart</button>
+                  <button onClick={() => addToCart(product.id)}>Add To Cart</button>
 
                  <Link to={`/product/${product.id}`}>Go to product</Link>
               </div>

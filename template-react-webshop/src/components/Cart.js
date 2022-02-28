@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function Cart({cartProducts}) {
+function Cart({cartProducts, removeFromCart}) {
 var total = 0
 
   return (
@@ -19,6 +19,9 @@ var total = 0
                     <div className="cartpicture">
                       <img src={product.url} alt="missing picture" />
                     </div>
+
+                    <button onClick={() => removeFromCart(product.id)}>Remove From Cart</button>
+
                   </div>
               } else { return console.log("test") } 
               
