@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"  
 import {Link} from "react-router-dom"
 
-function Products() {
+function Products({addToCart}) {
   const [products, setProducts] = useState([]);
 
     const fetchData = async () => {
@@ -23,17 +23,20 @@ function Products() {
   return (
     <div>
         <h1>All Products</h1>
+        
         {
             products.map((product) => (
               <div key={product.id}>
-                 <p>Title: {product.title}</p>
+                  <p>Title: {product.title}</p>
                   <p>Description: {product.description}</p>
                   <p>Price: {product.price}</p>
                   <p>Storage: {product.storage}</p>
                   <div className="picture">
                     <img src={product.url} alt="missing picture" />
                   </div>
-                  <button>Add to Cart</button>
+
+                  <button onClick={() => addToCart(product.id)}>addToCart</button>
+
                  <Link to={`/product/${product.id}`}>Go to product</Link>
               </div>
             ))

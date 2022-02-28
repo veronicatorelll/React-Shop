@@ -32,6 +32,25 @@ function App() {
         fetchData();
     }, [])
 
+// ---------- Add to Cart ---------------------
+     const addToCart = id => {
+      
+       console.log(id)
+       setCartProducts(cartProducts.map((product) => product.id === id
+       ? {...product, cart: true}
+       : product
+     ))
+     console.log(cartProducts)
+     }
+
+// ---------- Delete from Cart ---------------------
+      const removeFromCart = id => {
+        console.log(id)
+        setCartProducts(cartProducts.map((product) => product.id === id
+        ? {...product, cart: false}
+        : product
+      ))
+      }
 
 
 
@@ -41,9 +60,9 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path="/" element={<Products />} />
+          <Route path="/" element={<Products addToCart={addToCart}/>} />
           <Route path="/product/:testid" element={<Product />} />
-          <Route path="/Cart" element={<Cart cartProducts={cartProducts}/>}/> 
+          <Route path="/Cart" element={<Cart cartProducts={cartProducts} />}/> 
           <Route path="/Checkout" element={<Checkout />} /> 
 
          
