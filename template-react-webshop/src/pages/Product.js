@@ -40,7 +40,6 @@ function Product() {
             <Link to="/cart">Add to cart</Link>
 
 
-            
 
             
 

@@ -11,9 +11,7 @@ function Checkout() {
       <Link to ="/">Continue Shopping!</Link>
       </div>
   )
+  }
 
-}
 
 export default Checkout
-
-
