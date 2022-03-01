@@ -1,10 +1,20 @@
 import { Link } from 'react-router-dom'
 
-function Cart({cartProducts}) {
-var total = 0
+function Cart({cartProducts, setCartProducts}) {
+  var total = 0
+
+  // ---------- Delete from Cart ---------------------
+  const removeFromCart = id => {
+    console.log(id)
+    setCartProducts(cartProducts.map((product) => product.id === id
+    ? {...product, cart: false}
+    : product
+  ))
+  }
+
 
   return (
-    <div className="cart">
+    <div>
       <h2>Cart</h2>
         {
             cartProducts.map(product =>              
@@ -19,8 +29,11 @@ var total = 0
                     <div className="cartpicture">
                       <img src={product.url} alt="missing picture" />
                     </div>
+
+                    <button onClick={() => removeFromCart(product.id)}>Remove From Cart</button>
+
                   </div>
-              } else { return console.log("test") } 
+              } else { return console.log("produkter ligger inte i cart") } 
               
             })
         }

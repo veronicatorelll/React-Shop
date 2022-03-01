@@ -1,13 +1,15 @@
 import {Link} from "react-router-dom"
 import {FaShoppingCart} from "react-icons/fa"
+import Cart from "./Cart"
 
-function Header() {
+function Header({cartProducts, setCartProducts}) {
   return (
-    <div>
+    <div className="header">
       <Link to ="/"><h2>Header</h2></Link>
       <Link to="/cart">
         {<FaShoppingCart />}
         </Link>
+      <Cart cartProducts={cartProducts} setCartProducts={setCartProducts}/>
 
 
 

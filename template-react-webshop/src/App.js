@@ -7,20 +7,20 @@ import Header from './components/Header';
 import Products from './pages/Products';
 import Product from "./pages/Product"
 import Footer from './components/Footer';
-import Cart from './components/Cart';
 import Checkout from './pages/Checkout';
+import Contact from "./components/Contact";
+import About from "./components/About";
 
 
 function App() {
 
 // ---------- Cart State ---------------------
   const [cartProducts, setCartProducts] = useState([]);
-
+  
     const fetchData = async () => {
         try {
             const response = await fetch('https://codexplained.se/electronics.php');
             const data = await response.json();
-            console.log(data);
             
             setCartProducts(data);
         } catch(error) {
@@ -32,42 +32,20 @@ function App() {
         fetchData();
     }, [])
 
-// ---------- Add to Cart ---------------------
-     const addToCart = id => {
-      
-       console.log(id)
-       setCartProducts(cartProducts.map((product) => product.id === id
-       ? {...product, cart: true}
-       : product
-     ))
-     console.log(cartProducts)
-     }
-
-// ---------- Delete from Cart ---------------------
-      const removeFromCart = id => {
-        console.log(id)
-        setCartProducts(cartProducts.map((product) => product.id === id
-        ? {...product, cart: false}
-        : product
-      ))
-      }
-
-
 
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        <Header cartProducts={cartProducts} setCartProducts={setCartProducts}/>
+        
 
         <Routes>
-          <Route path="/" element={<Products addToCart={addToCart}/>} />
+          <Route path="/" element={<Products cartProducts={cartProducts} setCartProducts={setCartProducts}/>} />
           <Route path="/product/:testid" element={<Product />} />
-          <Route path="/product" element={<Product addToCart={addToCart} />} />
-          <Route path="/Cart" element={<Cart cartProducts={cartProducts} />}/> 
-          <Route path="/Checkout" element={<Checkout />}/> 
-
-         
-
+          {/* <Route path="/Cart" element={<Cart cartProducts={cartProducts} removeFromCart={removeFromCart} />}/>  */}
+          <Route path="/Checkout" element={<Checkout cartProducts={cartProducts}setCartProducts={setCartProducts}/>} /> 
+          <Route path="/Contact" element={<Contact />} /> 
+          <Route path="/About" element={<About />} /> 
 
         </Routes>
 

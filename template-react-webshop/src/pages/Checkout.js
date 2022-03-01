@@ -1,9 +1,13 @@
 import {Link} from 'react-router-dom'
+import { useEffect, useState } from 'react';
 
 
 
 function Checkout({cartProducts}) {
-  var total = 0;
+  var total = 0
+  const {isEmpty, setIsEmpty} = useState(false);
+
+  
   
     return (
       <div className="cart">
@@ -17,20 +21,27 @@ function Checkout({cartProducts}) {
                   return <div key={product.id}>
                       <p>Title: {product.title}</p>
                       <p>Price: {product.price}</p>
-                      <p>Id: {product.id}</p>
                       <div className="cartpicture">
-                      <img src={product.url} alt="missing picture" />
+                      <img src={product.url} alt="" />
                     </div>
                     </div>
-                } else { <div>Test</div> } 
+                } else { return console.log("trouble in  cart") } 
                 
               })
           }
         
-          <h3>Total:{total}$</h3>
+          <h3>Total:{total}</h3>
+
+          <div className="empty-cart">
+            {isEmpty && <div>Your cart is empty</div>}
+       </div>
 
 
           </div>
+         
+
+
+
   )
 }
 

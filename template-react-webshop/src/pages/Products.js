@@ -1,24 +1,33 @@
 import React, {useEffect, useState} from "react"  
 import {Link} from "react-router-dom"
 
-function Products({addToCart}) {
+function Products({setCartProducts, cartProducts}) {
   const [products, setProducts] = useState([]);
 
-    const fetchData = async () => {
-        try {
-            const response = await fetch('https://codexplained.se/electronics.php');
-            const data = await response.json();
-            console.log(data);
-            
-            setProducts(data);
-        } catch(error) {
-            console.log(error);
-        }
-    }
 
-    useEffect( () => {
-        fetchData();
-    }, [])
+  const fetchData = async () => {
+      try {
+          const response = await fetch('https://codexplained.se/electronics.php');
+          const data = await response.json();
+          
+          setProducts(data);
+      } catch(error) {
+          console.log(error);
+      }
+  }
+
+  useEffect( () => {
+      fetchData();
+  }, [])
+
+  // ---------- Add to Cart ---------------------
+  const addToCart = (id) => {
+    console.log(id)
+     setCartProducts(cartProducts.map((product) => product.id === id
+     ? {...product, cart: true}
+     : product
+   ))
+   }
 
   return (
     <div>
@@ -34,8 +43,8 @@ function Products({addToCart}) {
                   <div className="picture">
                     <img src={product.url} alt="missing picture" />
                   </div>
-
-                  <button onClick={() => addToCart(product.id)}>addToCart</button>
+                  <input />
+                  <button onClick={() => addToCart(product.id)}>Add To Cart</button>
 
                  <Link to={`/product/${product.id}`}>Go to product</Link>
               </div>
