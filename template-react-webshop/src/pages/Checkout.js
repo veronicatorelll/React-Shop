@@ -3,9 +3,16 @@ import { useEffect, useState } from 'react';
 
 
 
-function Checkout({cartProducts}) {
+function Checkout({cartProducts, setCartProducts}) {
   var total = 0
 
+  const removeFromCart = id => {
+    console.log(id)
+    setCartProducts(cartProducts.map((product) => product.id === id
+    ? {...product, cart: false}
+    : product
+  ))
+  }
   
   
     return (
@@ -24,6 +31,8 @@ function Checkout({cartProducts}) {
                       <div className="cartpicture">
                       <img src={product.url} alt="" />
                     </div>
+                    <button onClick={() => removeFromCart(product.id)}>Remove From Cart</button>
+
                     </div>
                 } else { return console.log("checkout trouble") } 
                 
