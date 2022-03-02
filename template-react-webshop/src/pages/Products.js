@@ -32,6 +32,7 @@ function Products({setCartProducts, cartProducts}) {
      ? {...product, cart: true, quantity: quantity}
      : product
    ))
+   setQuantity("")
    }
 
   // ---------- Handle Quantity Input ---------------------
@@ -63,7 +64,6 @@ function Products({setCartProducts, cartProducts}) {
                     </label>
                     <button >Add To Cart</button>
                   </form>
-                  {/* onClick={() => addToCart(product.id)} */}
 
                  <Link to={`/product/${product.id}`}>Go to product</Link>
               </div>

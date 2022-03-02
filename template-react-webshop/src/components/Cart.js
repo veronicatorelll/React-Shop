@@ -12,6 +12,14 @@ function Cart({cartProducts, setCartProducts}) {
   ))
   }
 
+  // ---------- Delete All ---------------------
+    const deleteAll = () => {
+      setCartProducts(cartProducts.map((product) => product.cart === true
+      ? {...product, cart: false}
+      : product
+    ))
+   }
+
 
   return (
     <div>
@@ -26,6 +34,7 @@ function Cart({cartProducts, setCartProducts}) {
                     <p>Title: {product.title}</p>
                     <p>Price: {product.price}</p>
                     <p>Id: {product.id}</p>
+                    <p>Quantity: {product.quantity}</p>
                     <div className="cartpicture">
                       <img src={product.url} alt="missing picture" />
                     </div>
@@ -38,7 +47,15 @@ function Cart({cartProducts, setCartProducts}) {
             })
         }
       
-        <h4>Cart Total: {total}$</h4>
+      <h4>
+        {
+          total < 1
+          ? "No Products In Cart"
+          : `Cart Total: ${total}$` 
+        }
+      </h4>
+      
+      <button onClick={deleteAll}>Remove All Products From Cart</button>
       <h2>End Cart</h2>
       <Link to="/checkout">Go to Checkout</Link>
       <br></br>
