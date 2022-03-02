@@ -16,7 +16,7 @@ function Checkout({cartProducts}) {
               {
     
                 if(product.cart === true) {
-                  total += product.price
+                  total += product.price  * product.quantity
                   return <div key={product.id}>
                       <p>Title: {product.title}</p>
                       <p>Price: {product.price}</p>
@@ -31,7 +31,7 @@ function Checkout({cartProducts}) {
         
          
         {
-          total < 1
+          total <1
           ? "Checkout is empty"
           : `Cart Total: ${total}$` 
           

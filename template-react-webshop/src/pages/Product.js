@@ -42,11 +42,10 @@ function Product ({setCartProducts, cartProducts}) {
             
             <h1>Product Page</h1>
        
-
             <h3>{product.title}</h3>
             <p>Description: {product.description}</p>
             <p>Price: {product.price}</p>
-            <p>Storage: {product.storage}</p>
+            <p>In stock: {product.storage}</p>
             <div className="pic">
             <img src={product.url} alt=""/>
             </div>
@@ -56,7 +55,7 @@ function Product ({setCartProducts, cartProducts}) {
                     <label>
                       <input type="number" />
                     </label>
-                    <button >Add To Cart</button>
+                    <button >Add to cart</button>
                   </form>
             
             
