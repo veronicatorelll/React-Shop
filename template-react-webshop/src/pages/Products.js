@@ -3,8 +3,9 @@ import {Link} from "react-router-dom"
 
 function Products({setCartProducts, cartProducts}) {
   const [products, setProducts] = useState([]);
+  const [quantity, setQuantity] = useState("")
 
-
+// ---------- API --------------------- 
   const fetchData = async () => {
       try {
           const response = await fetch('https://codexplained.se/electronics.php');
@@ -20,14 +21,25 @@ function Products({setCartProducts, cartProducts}) {
       fetchData();
   }, [])
 
+/*
+
   // ---------- Add to Cart ---------------------
-  const addToCart = (id) => {
+  
+  const addToCart = (id, e) => {
+    e.preventDefault();
     console.log(id)
      setCartProducts(cartProducts.map((product) => product.id === id
-     ? {...product, cart: true}
+     ? {...product, cart: true, quantity: `${quantity}`}
      : product
    ))
    }
+
+  // ---------- Handle Quantity Input ---------------------
+  const handleQuantityInput = (e) => {
+    setQuantity(e.target.value)
+  }
+
+  */
 
   return (
     <div>
@@ -43,8 +55,15 @@ function Products({setCartProducts, cartProducts}) {
                   <div className="picture">
                     <img src={product.url} alt="missing picture" />
                   </div>
-                  <input />
-                  <button onClick={() => addToCart(product.id)}>Add To Cart</button>
+
+
+                  {/* <form onSubmit={addToCart(product.id)}>
+                    <label>
+                      Quantity
+                      <input type="number" name="quantity" onChange={handleQuantityInput} value={cartProducts.quantity}/>
+                    </label>
+                    <button>Add To Cart</button>
+                  </form> */}
 
                  <Link to={`/product/${product.id}`}>Go to product</Link>
               </div>
