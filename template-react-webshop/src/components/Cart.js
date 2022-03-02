@@ -35,8 +35,8 @@ function Cart({cartProducts, setCartProducts}) {
                     <p>Price: {product.price}</p>
                     <p>Id: {product.id}</p>
                     <p>Quantity: {product.quantity}</p>
-                    <div className="cartpicture">
-                      <img src={product.url} alt="missing picture" />
+                    <div className="cartpicture"> 
+                      <img src={product.url} alt="missing picture"/> 
                     </div>
 
                     <button onClick={() => removeFromCart(product.id)}>Remove From Cart</button>

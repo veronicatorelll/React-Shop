@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 
 function Checkout({cartProducts}) {
   var total = 0
-  const {isEmpty, setIsEmpty} = useState(false);
 
   
   
@@ -25,16 +24,19 @@ function Checkout({cartProducts}) {
                       <img src={product.url} alt="" />
                     </div>
                     </div>
-                } else { return console.log("trouble in  cart") } 
+                } else { return console.log("checkout trouble") } 
                 
               })
           }
         
-          <h3>Total:{total}</h3>
-
-          <div className="empty-cart">
-            {isEmpty && <div>Your cart is empty</div>}
-       </div>
+         
+        {
+          total < 1
+          ? "Checkout is empty"
+          : `Cart Total: ${total}$` 
+          
+        }
+                  <h3>Total:{total}</h3>
 
 
           </div>

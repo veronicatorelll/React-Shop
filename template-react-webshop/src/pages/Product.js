@@ -3,9 +3,11 @@ import { useParams } from "react-router-dom";
 
 
 
-function Product ({setCartProducts, cartProducts, products}) {
+function Product ({setCartProducts, cartProducts}) {
     const [product, setProduct] = useState([]);
     const params = useParams();
+    const [quantity, setQuantity] = useState("")
+
     
 
     const fetchData = async () => {
@@ -19,12 +21,15 @@ function Product ({setCartProducts, cartProducts, products}) {
         }
     }
 
-    useEffect(() => {
+    useEffect( () => {
         fetchData();
-    }, []);
+    }, [])
+    
 
-    const addToCart = (id) => {
+    const addToCart = (e, id) => {
+        e.preventDefault();
         console.log(id)
+        console.log(quantity)
          setCartProducts(cartProducts.map((product) => product.id === id
          ? {...product, cart: true}
          : product
@@ -45,11 +50,20 @@ function Product ({setCartProducts, cartProducts, products}) {
             <div className="pic">
             <img src={product.url} alt=""/>
             </div>
+
             
-            <button onClick={() => addToCart(product.id)}>Add</button> 
+            <form onSubmit={() => addToCart(product.id)}>
+                    <label>
+                      <input type="number" />
+                    </label>
+                    <button >Add To Cart</button>
+                  </form>
+            
+            
+            
         </div>
     )
-     }
+}
 
 
 export default Product
