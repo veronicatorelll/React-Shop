@@ -21,7 +21,7 @@ function Cart({cartProducts, setCartProducts}) {
             {
   
               if(product.cart === true) {
-                total += product.price
+                total += product.price * product.quantity
                 return <div key={product.id}>
                     <p>Title: {product.title}</p>
                     <p>Price: {product.price}</p>

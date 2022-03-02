@@ -21,15 +21,15 @@ function Products({setCartProducts, cartProducts}) {
       fetchData();
   }, [])
 
-/*
 
   // ---------- Add to Cart ---------------------
   
-  const addToCart = (id, e) => {
+  const addToCart = (e, id) => {
     e.preventDefault();
     console.log(id)
+    console.log(quantity)
      setCartProducts(cartProducts.map((product) => product.id === id
-     ? {...product, cart: true, quantity: `${quantity}`}
+     ? {...product, cart: true, quantity: quantity}
      : product
    ))
    }
@@ -37,9 +37,8 @@ function Products({setCartProducts, cartProducts}) {
   // ---------- Handle Quantity Input ---------------------
   const handleQuantityInput = (e) => {
     setQuantity(e.target.value)
+    
   }
-
-  */
 
   return (
     <div>
@@ -57,13 +56,14 @@ function Products({setCartProducts, cartProducts}) {
                   </div>
 
 
-                  {/* <form onSubmit={addToCart(product.id)}>
+                  <form onSubmit={(e) => addToCart(e, product.id)}>
                     <label>
                       Quantity
-                      <input type="number" name="quantity" onChange={handleQuantityInput} value={cartProducts.quantity}/>
+                      <input type="number" name="quantity" onChange={handleQuantityInput} value={quantity}/>
                     </label>
-                    <button>Add To Cart</button>
-                  </form> */}
+                    <button >Add To Cart</button>
+                  </form>
+                  {/* onClick={() => addToCart(product.id)} */}
 
                  <Link to={`/product/${product.id}`}>Go to product</Link>
               </div>
