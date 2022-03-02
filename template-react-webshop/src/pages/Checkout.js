@@ -20,6 +20,7 @@ function Checkout({cartProducts}) {
                   return <div key={product.id}>
                       <p>Title: {product.title}</p>
                       <p>Price: {product.price}</p>
+                      <p>Quantity: {product.quantity}</p>
                       <div className="cartpicture">
                       <img src={product.url} alt="" />
                     </div>
