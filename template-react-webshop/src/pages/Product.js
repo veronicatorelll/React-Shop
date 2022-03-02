@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 
 function Product ({setCartProducts, cartProducts, products}) {
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState([]);
     const params = useParams();
     
 
@@ -23,7 +23,6 @@ function Product ({setCartProducts, cartProducts, products}) {
         fetchData();
     }, []);
 
-    // Kan jag använda addToCart (finns redan i Products)?
     const addToCart = (id) => {
         console.log(id)
          setCartProducts(cartProducts.map((product) => product.id === id
@@ -37,33 +36,20 @@ function Product ({setCartProducts, cartProducts, products}) {
 
             
             <h1>Product Page</h1>
-       {
-            
-           products.map((product) => (
-            <div key={product.id}>
+       
 
             <h3>{product.title}</h3>
             <p>Description: {product.description}</p>
             <p>Price: {product.price}</p>
             <p>Storage: {product.storage}</p>
-            <p>Hallå {params.testid}</p>
-
-            <div className="picture">
+            <div className="pic">
             <img src={product.url} alt=""/>
             </div>
             
             <button onClick={() => addToCart(product.id)}>Add</button> 
         </div>
-    ))
+    )
      }
 
-
-
-
-
-        </div>
-    )
-
-}
 
 export default Product
