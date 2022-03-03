@@ -42,12 +42,12 @@ function Checkout({cartProducts, setCartProducts}) {
          
         {
           total <1
-          ? "You have 0 products"
+          ?  "You have 0 products"
           : `Total: ${total}$` 
           
         }
 
-                  <Link to ="/">Continue shopping!</Link>
+                  <Link className='continue' to ="/">Continue shopping!</Link>
 
 
           </div>

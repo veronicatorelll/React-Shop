@@ -55,6 +55,7 @@ function Products({setCartProducts, cartProducts}) {
                   <div className="picture">
                     <img src={product.url} alt="missing picture" />
                   </div>
+                  <Link className="link-toprod" to={`/product/${product.id}`}>Go to product</Link>
 
 
                   <form onSubmit={(e) => addToCart(e, product.id)}>
@@ -62,10 +63,9 @@ function Products({setCartProducts, cartProducts}) {
                       Quantity
                       <input type="number" name="quantity" onChange={handleQuantityInput} value={quantity}/>
                     </label>
-                    <button >Add To Cart</button>
+                    <button className="add-tocart" >Add To Cart</button>
                   </form>
 
-                 <Link to={`/product/${product.id}`}>Go to product</Link>
               </div>
             ))
         }

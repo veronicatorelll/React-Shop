@@ -61,7 +61,7 @@ function Product ({setCartProducts, cartProducts}) {
             <p>Description: {product.description}</p>
             <p>Price: {product.price}</p>
             <p>In stock: {product.storage}</p>
-            <div className="pic">
+            <div className="picture">
             <img src={product.url} alt=""/>
 
             <form onSubmit={(e) => addToCart(e, product.id)}>

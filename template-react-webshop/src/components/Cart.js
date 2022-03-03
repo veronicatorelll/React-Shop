@@ -39,7 +39,7 @@ function Cart({cartProducts, setCartProducts}) {
                       <img src={product.url} alt="missing picture"/> 
                     </div>
 
-                    <button onClick={() => removeFromCart(product.id)}>Remove From Cart</button>
+                    <button className='remove-cart' onClick={() => removeFromCart(product.id)}>Remove From Cart</button>
 
                   </div>
               } else { return console.log("produkter ligger inte i cart") } 
@@ -55,11 +55,11 @@ function Cart({cartProducts, setCartProducts}) {
         }
       </h4>
       
-      <button onClick={deleteAll}>Remove All Products From Cart</button>
+      <button className='delete-cart' onClick={deleteAll}>Remove All Products From Cart</button>
       <h2>End Cart</h2>
-      <Link to="/checkout">Go to Checkout</Link>
+      <Link className='link-checkout' to="/checkout">Go to Checkout</Link>
       <br></br>
-      <Link to ="/">Go back to Products</Link>
+      <Link className='link-backprod' to ="/">Go back to Products</Link>
 
 
       </div>

@@ -5,7 +5,9 @@ import Cart from "./Cart"
 function Header({cartProducts, setCartProducts}) {
   return (
     <div className="header">
-      <Link to ="/"><h2>Header</h2></Link>
+            <p>Free shipping on orders over $ 49 / Fast delivery 1-2 weekdays / Free return - 30 days - prepaid return label</p>
+
+      <Link className="header-link" to ="/"><h2>Header</h2></Link>
       <Link to="/cart">
         {<FaShoppingCart />}
         </Link>
@@ -14,7 +16,6 @@ function Header({cartProducts, setCartProducts}) {
 
 
       
-      <p>Free shipping on orders over SEK 499 / Fast delivery 1-2 weekdays / Free return - 30 days - prepaid return label</p>
     </div>
   )
 }

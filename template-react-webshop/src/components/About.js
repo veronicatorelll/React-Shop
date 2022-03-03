@@ -3,8 +3,8 @@ import React from 'react'
 function About() {
   return (
     <div>
-        <h3>About us</h3>
-        <article>
+        <h3 className='h3-about'>About us</h3>
+        <article className='about'>
  What seems to be just another page in your sitemap, probably accessible through your header and/or footer, is actually one of your most compelling pieces of content. Or at least, it should be.
 
 Yes, we’re talking about your website’s About Us page.
