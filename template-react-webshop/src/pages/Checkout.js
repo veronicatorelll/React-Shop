@@ -31,7 +31,7 @@ function Checkout({cartProducts, setCartProducts}) {
                       <div className="cartpicture">
                       <img src={product.url} alt="" />
                     </div>
-                    <button onClick={() => removeFromCart(product.id)}>Remove From Cart</button>
+                    <button onClick={() => removeFromCart(product.id )}>Remove</button>
 
                     </div>
                 } else { return console.log("checkout trouble") } 
@@ -42,11 +42,12 @@ function Checkout({cartProducts, setCartProducts}) {
          
         {
           total <1
-          ? "Checkout is empty"
-          : `Cart Total: ${total}$` 
+          ? "You have 0 products"
+          : `Total: ${total}$` 
           
         }
-                  <h3>Total:{total}</h3>
+
+                  <Link to ="/">Continue shopping!</Link>
 
 
           </div>

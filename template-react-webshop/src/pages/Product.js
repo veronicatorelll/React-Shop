@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom";
 
 
@@ -26,17 +26,32 @@ function Product ({setCartProducts, cartProducts}) {
     }, [])
     
 
-    const addToCart = (e, id) => {
+    const addToCart = (e, product) => {
         e.preventDefault();
-        console.log(id)
-        console.log(quantity)
-         setCartProducts(cartProducts.map((product) => product.id === id
-         ? {...product, cart: true}
-         : product
-       ))
-       }
+        if (cartProducts.length > 0) {
+            setCartProducts(cartProducts.map(item=> item.id === product.id
+                ? {...product, cart: true}
+                : product
+                ))
+                setQuantity("")
 
-    return (
+            } else {
+                setCartProducts(product)
+            }
+        }
+        
+
+       
+       
+    
+ 
+    const handleQuantityInput = (e) => {
+     setQuantity(e.target.value)
+     
+   }
+       
+
+  return (
         <div>
 
             
@@ -48,18 +63,16 @@ function Product ({setCartProducts, cartProducts}) {
             <p>In stock: {product.storage}</p>
             <div className="pic">
             <img src={product.url} alt=""/>
-            </div>
 
-            
-            <form onSubmit={() => addToCart(product.id)}>
+            <form onSubmit={(e) => addToCart(e, product)}>
                     <label>
-                      <input type="number" />
+                      Quantity
+                      <input type="number" name="quantity" onChange={handleQuantityInput} value={quantity}/>
                     </label>
-                    <button >Add to cart</button>
+                    <button >Add</button>
                   </form>
-            
-            
-            
+            </div>
+  
         </div>
     )
 }
