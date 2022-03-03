@@ -26,11 +26,11 @@ function Product ({setCartProducts, cartProducts}) {
     }, [])
     
 
-    const addToCart = (e, product) => {
+    const addToCart = (e, id) => {
         e.preventDefault();
         if (cartProducts.length > 0) {
-            setCartProducts(cartProducts.map(item=> item.id === product.id
-                ? {...product, cart: true}
+            setCartProducts(cartProducts.map((product)=> product.id === id
+                ? {...product, cart: true, quantity: quantity}
                 : product
                 ))
                 setQuantity("")
@@ -64,7 +64,7 @@ function Product ({setCartProducts, cartProducts}) {
             <div className="pic">
             <img src={product.url} alt=""/>
 
-            <form onSubmit={(e) => addToCart(e, product)}>
+            <form onSubmit={(e) => addToCart(e, product.id)}>
                     <label>
                       Quantity
                       <input type="number" name="quantity" onChange={handleQuantityInput} value={quantity}/>
