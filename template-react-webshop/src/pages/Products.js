@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react"  
 import {Link} from "react-router-dom"
+import {Image, ProductsContainer, ProductContainer} from "../styles/styledProducts"
 
 function Products({setCartProducts, cartProducts}) {
   const [products, setProducts] = useState([]);
@@ -42,18 +43,16 @@ function Products({setCartProducts, cartProducts}) {
   }
 
   return (
-    <div>
-        <h1>All Products</h1>
-        
+    <ProductsContainer>        
         {
             products.map((product) => (
-              <div key={product.id}>
+              <ProductContainer key={product.id}>
                   <p>Title: {product.title}</p>
                   <p>Description: {product.description}</p>
                   <p>Price: {product.price}</p>
                   <p>Storage: {product.storage}</p>
                   <div className="picture">
-                    <img src={product.url} alt="missing picture" />
+                    <Image src={product.url} alt="missing picture" />
                   </div>
                   <Link className="link-toprod" to={`/product/${product.id}`}>Go to product</Link>
 
@@ -65,11 +64,10 @@ function Products({setCartProducts, cartProducts}) {
                     </label>
                     <button className="add-tocart" >Add To Cart</button>
                   </form>
-
-              </div>
+              </ProductContainer>
             ))
         }
-    </div>
+    </ProductsContainer>
   )
 }
 

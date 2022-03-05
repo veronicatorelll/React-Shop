@@ -3,32 +3,16 @@
 * {
   font-family: "Quicksand";
   color: #333;
-  margin-left: 2px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-.picture img{
-  width: 300px;
-  height: 100%;
-  margin: 20px 0px;
-  border-bottom: 1px solid #fafafa;
-  border-radius: 3px;
-}
-
-.cartpicture img {
-  width: 100px;
-  height: 100%;
-  border-bottom: 1px solid #fafafa;
-  border-radius: 3px;
-
-
-}
-
-h1 {
+/* h1 {
   text-align: center;
   animation-duration: 3s;
   animation-name: slidein;
-  }
+  } */
 /*   
   @keyframes slidein {
     from {
@@ -61,7 +45,7 @@ h1 {
     padding: 8px;
     border-radius: 8px;
     cursor: pointer;
-  text-decoration: none;
+    text-decoration: none;
   }
 
   .link-checkout, .link-backprod, .header-link, .link-toprod, .continue {

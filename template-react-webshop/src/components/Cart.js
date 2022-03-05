@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import {CartImage} from "../styles/styledCart"
 
 function Cart({cartProducts, setCartProducts}) {
   var total = 0
@@ -22,7 +23,7 @@ function Cart({cartProducts, setCartProducts}) {
 
 
   return (
-    <div>
+    <div className="cart">
       <h2>Cart</h2>
         {
             cartProducts.map(product =>              
@@ -36,7 +37,7 @@ function Cart({cartProducts, setCartProducts}) {
                     <p>Id: {product.id}</p>
                     <p>Quantity: {product.quantity}</p>
                     <div className="cartpicture"> 
-                      <img src={product.url} alt="missing picture"/> 
+                      <CartImage src={product.url} alt="missing picture"/> 
                     </div>
 
                     <button className='remove-cart' onClick={() => removeFromCart(product.id)}>Remove From Cart</button>
@@ -47,13 +48,13 @@ function Cart({cartProducts, setCartProducts}) {
             })
         }
       
-      <h4>
+      <div>
         {
           total < 1
           ? "No Products In Cart"
           : `Cart Total: ${total}$` 
         }
-      </h4>
+      </div>
       
       <button className='delete-cart' onClick={deleteAll}>Remove All Products From Cart</button>
       <h2>End Cart</h2>
@@ -65,6 +66,5 @@ function Cart({cartProducts, setCartProducts}) {
       </div>
   )
 }
-
 export default Cart
 
