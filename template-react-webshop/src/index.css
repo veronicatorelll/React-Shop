@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+.FaShoppingCart {
+  cursor: pointer;
+}
+
 /* h1 {
   text-align: center;
   animation-duration: 3s;
@@ -38,7 +42,7 @@
   }
 
   
-  .contact-link, .about-link, .delete-cart, .add-tocart, .remove-cart{
+  /* .contact-link, .about-link, .delete-cart, .add-tocart, .remove-cart{
     background-color: #eb1958;
     color: #fff;
     border: 0;
@@ -46,7 +50,7 @@
     border-radius: 8px;
     cursor: pointer;
     text-decoration: none;
-  }
+  } */
 
   .link-checkout, .link-backprod, .header-link, .link-toprod, .continue {
     text-decoration: none;

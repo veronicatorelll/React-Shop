@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import {CartImage} from "../styles/styledCart"
+import {CartImage, CartProductsContainer, CartPriceQty, CartButton, CartTotal, LinkContainer} from "../styles/styledCart"
 
-function Cart({cartProducts, setCartProducts}) {
+function Cart({cartProducts, setCartProducts, setToggleCart, toggleCart}) {
   var total = 0
 
   // ---------- Delete from Cart ---------------------
@@ -21,6 +21,10 @@ function Cart({cartProducts, setCartProducts}) {
     ))
    }
 
+   // ---------- Toggle Cart ---------------------
+  const handleToggleCart = () => {
+    setToggleCart(!toggleCart)
+  }
 
   return (
     <div className="cart">
@@ -31,37 +35,46 @@ function Cart({cartProducts, setCartProducts}) {
   
               if(product.cart === true) {
                 total += product.price * product.quantity
-                return <div key={product.id}>
-                    <p>Title: {product.title}</p>
-                    <p>Price: {product.price}</p>
-                    <p>Id: {product.id}</p>
-                    <p>Quantity: {product.quantity}</p>
+                return <CartProductsContainer key={product.id}>
+                    <h3>{product.title}</h3>
+                    <CartPriceQty>
+                      <p>Price: {product.price}$</p>
+                      <p>Quantity: {product.quantity}</p>
+                    </CartPriceQty>
                     <div className="cartpicture"> 
                       <CartImage src={product.url} alt="missing picture"/> 
                     </div>
 
-                    <button className='remove-cart' onClick={() => removeFromCart(product.id)}>Remove From Cart</button>
+                    <CartButton className='remove-cart' onClick={() => removeFromCart(product.id)}>Remove From Cart</CartButton>
 
-                  </div>
+                  </CartProductsContainer>
               } else { return console.log("produkter ligger inte i cart") } 
               
             })
         }
       
-      <div>
+      <CartTotal>
         {
           total < 1
           ? "No Products In Cart"
           : `Cart Total: ${total}$` 
         }
-      </div>
+      </CartTotal>
       
-      <button className='delete-cart' onClick={deleteAll}>Remove All Products From Cart</button>
-      <h2>End Cart</h2>
-      <Link className='link-checkout' to="/checkout">Go to Checkout</Link>
-      <br></br>
-      <Link className='link-backprod' to ="/">Go back to Products</Link>
-
+      <CartButton className='delete-cart' onClick={deleteAll}>Remove All Products From Cart</CartButton>
+      <LinkContainer>
+        <Link className='link-checkout' to="/checkout">
+          <CartButton onClick={handleToggleCart}>
+            Go to Checkout
+          </CartButton>
+        </Link>
+        
+        <Link className='link-backprod' to ="/">
+          <CartButton onClick={handleToggleCart}>
+            Go back to Products
+          </CartButton>
+        </Link>
+      </LinkContainer>
 
       </div>
   )

@@ -16,14 +16,14 @@ function Header({cartProducts, setCartProducts}) {
   return (
     <HeaderStyle>
       <Info>Free shipping on orders over $ 49 / Fast delivery 1-2 weekdays / Free return - 30 days - prepaid return label</Info>
-      <HeaderContent>  
+      <HeaderContent>
         <Logo>    
-          <Link className="header-link" to ="/"><h2>Boozt.com</h2></Link>
+          <Link className="header-link" to ="/"><h1>Boozt.com</h1></Link>
         </Logo>
         <Dropdown>
-          <FaShoppingCart onClick={handleToggleCart}/>
+          <FaShoppingCart className="FaShoppingCart" onClick={handleToggleCart}/>
           <DropdownCart toggleCart={toggleCart}>
-              <Cart cartProducts={cartProducts} setCartProducts={setCartProducts}/>
+              <Cart cartProducts={cartProducts} setCartProducts={setCartProducts} toggleCart={toggleCart} setToggleCart={setToggleCart}/>
           </DropdownCart>
         </Dropdown>
       </HeaderContent>

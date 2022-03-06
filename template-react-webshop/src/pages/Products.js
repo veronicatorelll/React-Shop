@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"  
 import {Link} from "react-router-dom"
-import {Image, ProductsContainer, ProductContainer} from "../styles/styledProducts"
+import {Image, ProductsContainer, ProductContainer, ProductsButton, ProductsInput, ProductPrice, ProductsForm} from "../styles/styledProducts"
 
 function Products({setCartProducts, cartProducts}) {
   const [products, setProducts] = useState([]);
@@ -29,7 +29,7 @@ function Products({setCartProducts, cartProducts}) {
     e.preventDefault();
     console.log(id)
     console.log(quantity)
-     setCartProducts(cartProducts.map((product) => product.id === id
+     setCartProducts(cartProducts.map((product) => product.id === id && quantity > 0
      ? {...product, cart: true, quantity: quantity}
      : product
    ))
@@ -47,23 +47,21 @@ function Products({setCartProducts, cartProducts}) {
         {
             products.map((product) => (
               <ProductContainer key={product.id}>
-                  <p>Title: {product.title}</p>
-                  <p>Description: {product.description}</p>
-                  <p>Price: {product.price}</p>
-                  <p>Storage: {product.storage}</p>
-                  <div className="picture">
-                    <Image src={product.url} alt="missing picture" />
-                  </div>
-                  <Link className="link-toprod" to={`/product/${product.id}`}>Go to product</Link>
+                  <Link className="link-toprod" to={`/product/${product.id}`}>
+                    <h3>{product.title}</h3>
+                  </Link>
+                  <ProductPrice>Price: {product.price}$</ProductPrice>
+                    <div>
+                      <Link className="link-toprod" to={`/product/${product.id}`}>
+                        <Image src={product.url} alt="missing picture" />
+                      </Link>
+                    </div>
 
-
-                  <form onSubmit={(e) => addToCart(e, product.id)}>
-                    <label>
-                      Quantity
-                      <input type="number" name="quantity" onChange={handleQuantityInput} value={quantity}/>
-                    </label>
-                    <button className="add-tocart" >Add To Cart</button>
-                  </form>
+                  <ProductsForm onSubmit={(e) => addToCart(e, product.id)}>
+                    <p>Amount</p>
+                    <ProductsInput type="number" name="quantity" onChange={handleQuantityInput} value={quantity}/>
+                    <ProductsButton className="add-tocart" >Add To Cart</ProductsButton>
+                  </ProductsForm>
               </ProductContainer>
             ))
         }

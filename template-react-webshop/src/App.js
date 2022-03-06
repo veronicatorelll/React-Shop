@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Checkout from './pages/Checkout';
 import Contact from "./components/Contact";
 import About from "./components/About";
+import {Global} from "./styles/styledGlobal"
 
 
 function App() {
@@ -36,19 +37,19 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Global>
         <Header cartProducts={cartProducts} setCartProducts={setCartProducts}/>
         
-
         <Routes>
           <Route path="/" element={<Products cartProducts={cartProducts} setCartProducts={setCartProducts}/>} />
           <Route path="/product/:testid" element={<Product cartProducts={cartProducts}setCartProducts={setCartProducts} />} />
           <Route path="/Checkout" element={<Checkout cartProducts={cartProducts}setCartProducts={setCartProducts}/>} /> 
           <Route path="/Contact" element={<Contact />} /> 
           <Route path="/About" element={<About />} /> 
-
         </Routes>
 
         <Footer />
+        </Global>
       </BrowserRouter>
     </div>
   );
