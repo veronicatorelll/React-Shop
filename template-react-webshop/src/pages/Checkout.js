@@ -17,7 +17,6 @@ function Checkout({cartProducts, setCartProducts}) {
   
     return (
       <div className="cart">
-        <h2>Checkout</h2>
           {
               cartProducts.map(product =>              
               {
@@ -25,13 +24,15 @@ function Checkout({cartProducts, setCartProducts}) {
                 if(product.cart === true) {
                   total += product.price  * product.quantity
                   return <div key={product.id}>
-                      <p>Title: {product.title}</p>
-                      <p>Price: {product.price}</p>
-                      <p>Quantity: {product.quantity}</p>
-                      <div className="cartpicture">
+                    <div className='cart-wrap'>
+                    <div className="cartpicture">
                       <img src={product.url} alt="" />
                     </div>
-                    <button onClick={() => removeFromCart(product.id )}>Remove</button>
+                    </div>
+                      <p className='product-title'>Title: {product.title}</p>
+                      <p className='price'>Price: {product.price}</p>
+                      <p className='quantity'>Quantity: {product.quantity}</p>
+                    <button className='remove-checkout' onClick={() => removeFromCart(product.id )}>Remove</button>
 
                     </div>
                 } else { return console.log("checkout trouble") } 
@@ -39,13 +40,15 @@ function Checkout({cartProducts, setCartProducts}) {
               })
           }
         
+        <div className='total'>
          
         {
           total <1
-          ?  "You have 0 products"
+          ?  "You have 0 products."
           : `Total: ${total}$` 
           
         }
+        </div>
 
                   <Link className='continue' to ="/">Continue shopping!</Link>
 
@@ -61,4 +64,3 @@ function Checkout({cartProducts, setCartProducts}) {
 export default Checkout
 
  
-      // <Link to ="/">Continue Shopping!</Link>

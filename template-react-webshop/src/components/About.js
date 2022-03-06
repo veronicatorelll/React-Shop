@@ -37,7 +37,7 @@ Let’s take a look at 16 of our favorite About Us pages, whose design and conte
 const Title = styled.h3 `
 font-size: 40px;
 max-width: 600px;
- margin: 50px auto;
+margin: 50px auto;
 padding: 20px;
 margin-top: 80px;
 `

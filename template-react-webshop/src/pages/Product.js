@@ -54,22 +54,20 @@ function Product ({setCartProducts, cartProducts}) {
   return (
         <div>
 
-            
-            <h1>Product Page</h1>
-       
-            <h3>{product.title}</h3>
-            <p>Description: {product.description}</p>
-            <p>Price: {product.price}</p>
-            <p>In stock: {product.storage}</p>
-            <div className="picture">
+            <div className='product-wrap'>
+            <div className="productpic">
             <img src={product.url} alt=""/>
-
+            </div>
+            <h3 className='product-title'>{product.title}</h3>
+            <p className='description'>Description: {product.description}</p>
+            <p className='price'>Price: {product.price}$</p>
+            <p className='stock'>In stock: {product.storage}</p>
+            
             <form onSubmit={(e) => addToCart(e, product.id)}>
-                    <label>
-                      Quantity
-                      <input type="number" name="quantity" onChange={handleQuantityInput} value={quantity}/>
-                    </label>
-                    <button >Add</button>
+                <label className='label-addcart'>
+                 <input type="number" name="quantity" onChange={handleQuantityInput} value={quantity}/>
+                </label>
+                 <button className='addtocart'>Add to cart</button>
                   </form>
             </div>
   
