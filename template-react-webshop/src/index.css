@@ -12,46 +12,20 @@
   cursor: pointer;
 }
 
-/* h1 {
-  text-align: center;
-  animation-duration: 3s;
-  animation-name: slidein;
-  } */
-/*   
-  @keyframes slidein {
-    from {
-      margin-left: 100%;
-      width: 300%;
-    }
-  
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  } */
 
-  .contact, .about {
+  /* .contact, .about {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
-  }
+  } */
 
   .h3-contact, .h3-about {
   text-align: center;
   color: #f1356d;
+  margin-top: 50px;
   }
 
   
-  /* .contact-link, .about-link, .delete-cart, .add-tocart, .remove-cart{
-    background-color: #eb1958;
-    color: #fff;
-    border: 0;
-    padding: 8px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-  } */
-
   .link-checkout, .link-backprod, .header-link, .link-toprod, .continue {
     text-decoration: none;
   }

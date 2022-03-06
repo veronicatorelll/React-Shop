@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "react-icons": "^4.3.1"
+    "framer-motion": "^6.2.8",
+    "react-icons": "^4.3.1",
+    "styled-components": "^5.3.3"
   }
 }

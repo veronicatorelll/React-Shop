@@ -18,7 +18,7 @@ function Header({cartProducts, setCartProducts}) {
       <Info>Free shipping on orders over $ 49 / Fast delivery 1-2 weekdays / Free return - 30 days - prepaid return label</Info>
       <HeaderContent>
         <Logo>    
-          <Link className="header-link" to ="/"><h1>Boozt.com</h1></Link>
+          <Link className="header-link" to ="/"><h1>veddie.com</h1></Link>
         </Logo>
         <Dropdown>
           <FaShoppingCart className="FaShoppingCart" onClick={handleToggleCart}/>
