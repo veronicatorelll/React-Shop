@@ -62,7 +62,7 @@ function Checkout({cartProducts, setCartProducts}) {
 
             <form onSubmit={(e) => addToCart(e, product.id)}>
                <label className='label-addcart'>
-                 <input type="number" min="1" placeholder='wanted amount...' name="quantity" onChange={handleQuantityInput} value={quantity}/>
+                 <input type="number" min="1" placeholder='wanted amount...' name="quantity" onChange={handleQuantityInput} value={quantity.id}/>
                   </label>
                    <button className='addtocart'>Update quantity</button>
                     </form>
