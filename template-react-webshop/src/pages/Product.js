@@ -8,7 +8,7 @@ function Product ({setCartProducts, cartProducts}) {
     const params = useParams();
     const [quantity, setQuantity] = useState("")
 
-    
+// ------ API ------
 
     const fetchData = async () => {
         try {
@@ -26,6 +26,7 @@ function Product ({setCartProducts, cartProducts}) {
     }, [])
     
 
+// ------ Add to Cart ------
     const addToCart = (e, id) => {
         e.preventDefault();
         if (cartProducts.length > 0) {
@@ -38,12 +39,10 @@ function Product ({setCartProducts, cartProducts}) {
             } else {
                 setCartProducts(product)
             }
-        }
-        
-
+        }       
        
        
-    
+// ------ Handle quantity input ------
  
     const handleQuantityInput = (e) => {
      setQuantity(e.target.value)

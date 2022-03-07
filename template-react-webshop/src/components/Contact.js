@@ -23,6 +23,13 @@ During the hiring process, employers use the contact information listed on your 
 updates about your job application, including getting in touch to schedule initial interviews and filling out paperwork regarding your pending employment.
         </Article>
         
+      <div className='customer-service'>
+        <h4>Get in touch with us!</h4>
+        <p>Mail: hello@veddie.se </p>
+        <p>Phone: +46 673 192 733 </p>
+        <p>Address: Veddies Väg 1, 168 44, Stockholm </p>
+        </div>
+        
         </div>
   )
 }
