@@ -41,7 +41,7 @@ function Cart({cartProducts, setCartProducts, setToggleCart, toggleCart}) {
                       <p>Price: {product.price}$</p>
                       <p>Quantity: {product.quantity}</p>
                     </CartPriceQty>
-                    <div className="cartpicture"> 
+                    <div> 
                       <CartImage src={product.url} alt="missing picture"/> 
                     </div>
 

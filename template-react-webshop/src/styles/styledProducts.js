@@ -11,10 +11,10 @@ border-radius: 3px;
 export const ProductsContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
-width: 50vw;
-margin-top: 5vh;
+width: 60vw;
+margin-top: 3vh;
 margin-bottom: 1vh;
-margin-left: 25vw;
+margin-left: 20vw;
 `
 
 export const ProductContainer = styled.div`
@@ -24,7 +24,7 @@ flex-direction: column;
 border: solid pink 2px;
 background-color: #F4BECF;
 margin: 1vw;
-width: 14vw;
+width: 18vw;
 padding-top: 1vh;
 padding-bottom: 1vh;
 `

@@ -22,7 +22,7 @@ function Products({setCartProducts, cartProducts}) {
   }, [])
 
   return (
-    <ProductsContainer>        
+    <ProductsContainer>
         {
             products.map((product) => (
               <Product product={product} setCartProducts={setCartProducts} cartProducts={cartProducts}/>
