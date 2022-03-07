@@ -142,8 +142,10 @@ margin-left: 410px;
 }
 
 .footer-container {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100vw;
+  background-color: peachpuff;
+  height: 5vh;
 }
 
