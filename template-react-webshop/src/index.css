@@ -79,6 +79,7 @@
     height: 200px;
     width: 300px;
     margin-top: 50px;
+    max-height: 16vh;
   }
 
   .cart-wrap img {
@@ -138,5 +139,11 @@ margin-left: 410px;
   flex-direction: column;
   text-align: center;
   margin-bottom: 100px;
+}
+
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
 }
 

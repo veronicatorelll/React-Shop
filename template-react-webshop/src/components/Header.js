@@ -3,6 +3,7 @@ import React, {useState} from "react"
 import {FaShoppingCart} from "react-icons/fa"
 import Cart from "./Cart"
 import {HeaderStyle, Info, DropdownCart, HeaderContent, Dropdown, Logo} from "../styles/styledHeader"
+import { motion } from 'framer-motion'
 
 function Header({cartProducts, setCartProducts}) {
 
@@ -15,7 +16,12 @@ function Header({cartProducts, setCartProducts}) {
   
   return (
     <HeaderStyle>
+
+      <motion.p
+      animate={{ rotate: 360 }}
+      transition={{ duration: 2 }}>
       <Info>Free shipping on orders over $ 49 / Fast delivery 1-2 weekdays / Free return - 30 days - prepaid return label</Info>
+      </motion.p>
       <HeaderContent>
         <Logo>    
           <Link className="header-link" to ="/"><h1>veddie.com</h1></Link>

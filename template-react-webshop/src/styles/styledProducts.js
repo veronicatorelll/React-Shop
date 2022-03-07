@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Image = styled.img`
-  max-height: 16vh;
-  max-width: 13vw;
-  margin: 20px 0px;
-  border-bottom: 1px solid #fafafa;
-  border-radius: 3px;
+max-height: 16vh;
+max-width: 13vw;
+margin: 20px 0px;
+border-bottom: 1px solid #fafafa;
+border-radius: 3px;
 `
 
 export const ProductsContainer = styled.div`

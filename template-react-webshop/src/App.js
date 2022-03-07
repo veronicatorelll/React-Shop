@@ -49,7 +49,7 @@ function App() {
         </Routes>
 
         <Footer />
-        </Global>
+      </Global>
       </BrowserRouter>
     </div>
   );
