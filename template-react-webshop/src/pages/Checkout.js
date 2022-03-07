@@ -2,9 +2,11 @@ import {Link} from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
 
-
 function Checkout({cartProducts, setCartProducts}) {
   var total = 0
+  const [product, setProduct] = useState([]);
+  const [quantity, setQuantity] = useState("")
+
 
   const removeFromCart = id => {
     console.log(id)
@@ -14,6 +16,31 @@ function Checkout({cartProducts, setCartProducts}) {
   ))
   }
   
+  
+  const addToCart = (e, id) => {
+    e.preventDefault();
+    if (cartProducts.length > 0) {
+        setCartProducts(cartProducts.map((product)=> product.id === id
+            ? {...product, cart: true, quantity: quantity}
+            : product
+            ))
+            setQuantity("")
+
+        } else {
+            setCartProducts(product)
+        }
+    }
+
+
+
+    const handleQuantityInput = (e) => {
+      setQuantity(e.target.value)
+      
+    } 
+
+
+
+
   
     return (
       <div className="cart">
@@ -34,6 +61,13 @@ function Checkout({cartProducts, setCartProducts}) {
                       <p className='quantity'>Quantity: {product.quantity}</p>
                     <button className='remove-checkout' onClick={() => removeFromCart(product.id )}>Remove</button>
 
+            <form onSubmit={(e) => addToCart(e, product.id)}>
+               <label className='label-addcart'>
+                 <input type="number" min="1" placeholder='wanted amount' name="quantity" onChange={handleQuantityInput} value={quantity}/>
+                </label>
+                 <button className='addtocart'>Update quantity</button>
+                  </form>
+                  
                     </div>
                 } else { return console.log("checkout trouble") } 
                 
