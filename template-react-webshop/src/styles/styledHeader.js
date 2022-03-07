@@ -34,7 +34,9 @@ display: ${props => props.toggleCart ? "block" : "none"};
 background-color: peachpuff;
 margin-top: 4vh;
 right: 0;
-width: 20vw;
+width: 15vw;
 border: solid black 2px;
 padding: 5px;
+max-height: 80vh;
+overflow: auto;
 `
