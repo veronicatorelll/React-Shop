@@ -18,8 +18,9 @@ function Header({cartProducts, setCartProducts}) {
     <HeaderStyle>
 
       <motion.p
-      animate={{ rotate: 360 }}
-      transition={{ duration: 2 }}>
+      // animate={{ rotate: 360 }}
+      // transition={{ duration: 1 }}
+      >
       <Info>Free shipping on orders over $ 49 / Fast delivery 1-2 weekdays / Free return - 30 days - prepaid return label</Info>
       </motion.p>
       <HeaderContent>

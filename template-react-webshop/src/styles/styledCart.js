@@ -32,7 +32,7 @@ text-decoration: none;
 margin: 2px;
 `
 export const CartTotal = styled.h4`
-border-top: solid black 2px;
+border-top: solid black 1px;
 `
 export const LinkContainer = styled.div`
 display: flex;

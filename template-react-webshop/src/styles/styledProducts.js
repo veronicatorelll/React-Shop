@@ -22,7 +22,7 @@ display: flex;
 align-items: center;
 flex-direction: column;
 border: solid pink 2px;
-background-color: #F4BECF;
+// background-color: #F4BECF;
 margin: 1vw;
 width: 18vw;
 padding-top: 1vh;

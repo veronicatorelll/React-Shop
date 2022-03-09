@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
 export const HeaderStyle = styled.div`
-background-color: peachpuff;
+background-color: white;
+opacity: 0.9;
+
 `
 
 export const Info = styled.p`
 background-color: black;
+opacity: 0.7;
 color: white;
 text-align: center;
 `
@@ -31,11 +34,10 @@ position: relative;
 export const DropdownCart = styled.div`
 position: absolute;
 display: ${props => props.toggleCart ? "block" : "none"};
-background-color: peachpuff;
 margin-top: 4vh;
 right: 0;
 width: 15vw;
-border: solid black 2px;
+border: solid black 1.5px;
 padding: 5px;
 max-height: 80vh;
 overflow: auto;

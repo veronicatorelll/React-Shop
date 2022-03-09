@@ -50,15 +50,15 @@ function Checkout({cartProducts, setCartProducts}) {
                 if(product.cart === true) {
                   total += product.price  * product.quantity
                    return <div key={product.id}>
-                    <div className='cart-wrap'>
-                    <div className="cartpicture">
-                      <img src={product.url} alt="" />
-                    </div>
-                    </div>
+                   
                       <p className='checkout-title'>Title: {product.title}</p>
                       <p className='checkout-price'>Price: {product.price}$</p>
                       <p className='checkout-quantity'>Quantity: {product.quantity}</p>
-                    <button className='remove-checkout' onClick={() => removeFromCart(product.id )}>Remove</button>
+                      <div className='cart-wrap'>
+                    <div className="cartpicture">
+                      <img src={product.url} alt="" />
+                    </div>
+                    <button className='remove-checkout' onClick={() => removeFromCart(product.id )}>X</button>
 
             <form onSubmit={(e) => addToCart(e, product.id)}>
                <label className='label-addcart'>
@@ -66,7 +66,8 @@ function Checkout({cartProducts, setCartProducts}) {
                   </label>
                    <button className='addtocart'>Update quantity</button>
                     </form>
-                  
+                    </div>
+
                     </div>
                 } else { return console.log("checkout trouble") } 
                 

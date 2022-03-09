@@ -51,7 +51,7 @@
   .continue, .total {
     display: block;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     padding: 30px;
   }
 
@@ -69,41 +69,52 @@
   margin-left: 400px;
 
   }
+
   .productpic img {
     height: 300px;
     width: 400px;
     margin-top: 50px;
   }
 
+
+
   .cartpicture img {
-    height: 200px;
-    width: 300px;
+    height: 300px;
+    width: 400px;
     margin-top: 50px;
     max-height: 16vh;
   }
 
+
   .cart-wrap img {
     display: flex;
     flex-wrap: wrap;
-    width: 300px;
+    width: 200px;
     margin-top: 50px;
     margin-bottom: 50px;
-    margin-left: 475px;}
+    margin-left: 530px;
+
+  }
   
+  .cart-wrap {
+    border-bottom: solid black 1px;
+
+  }
   
 .product-title, .description, .price, .stock, .quantity{
 max-width: 450px;
 margin: 50px auto;
 margin-top: -40px;
+margin-bottom: 50px;
 margin-left: 410px;
 }
 
-
 .checkout-title, .checkout-price, .checkout-quantity{
   max-width: 450px;
-  margin: 50px auto;
-  margin-top: -40px;
-  margin-left: 562px;
+  margin: 10px auto;
+  margin-left: 572px;
+  font-size: 13px;
+  
   }
 
 .addtocart, .remove-checkout {
@@ -117,19 +128,29 @@ margin-left: 410px;
 }
 
 .addtocart {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   padding: 5px;
+}
 
+.addtocart:hover {
+  box-shadow: 1px 2px 1px rgb(15, 15, 15);
+  border-radius: 10px;
 }
 .remove-checkout {
   display: inline;
   float: right;
-  margin-right: 400px;
-  margin-top: -250px;
+  margin-right: 510px;
+  margin-top: -110px;
+  font-size: 10px;
+  padding: 7px;
 }
 
+.remove-checkout:hover {
+  box-shadow: 1px 2px 1px rgb(15, 15, 15);
+  border-radius: 10px;
+}
 .label-addcart {
-  margin-left: 38%;
+  margin-left: 39%;
   padding: 10px;
 }
 
@@ -143,7 +164,7 @@ margin-left: 410px;
 
 .footer-container {
   position: absolute;
-  bottom: 0;
+  bottom: -30;
   width: 100vw;
 }
 

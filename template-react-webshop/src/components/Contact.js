@@ -1,3 +1,4 @@
+// --- Denna komponent samt About.js är stylade genom styled components ---
 import React from 'react'
 import { motion } from 'framer-motion'
 import styled  from 'styled-components'
@@ -8,8 +9,7 @@ function Contact() {
   return (
     <div>
         <motion.h3 className='h3-contact'
-        animate={{ rotate: 360 }}
-        transition={{ duration: 2 }}
+        animate={{ x: [0, 100, 0] }}
         >Contact Page</motion.h3>
 
         <Title>What is contact information? </Title>
