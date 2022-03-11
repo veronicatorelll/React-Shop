@@ -42,3 +42,7 @@ padding: 5px;
 max-height: 80vh;
 overflow: auto;
 `
+export const AlternateSolution = styled.div`
+border: solid green 2px;
+margin-left: 1rem;
+`

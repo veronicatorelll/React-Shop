@@ -25,7 +25,9 @@ function Products({setCartProducts, cartProducts}) {
     <ProductsContainer>
         {
             products.map((product) => (
+              <div key={product.id}>
               <Product product={product} setCartProducts={setCartProducts} cartProducts={cartProducts}/>
+              </div>
             ))
         }
     </ProductsContainer>

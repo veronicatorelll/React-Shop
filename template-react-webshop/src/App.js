@@ -11,6 +11,7 @@ import Checkout from './pages/Checkout';
 import Contact from "./components/Contact";
 import About from "./components/About";
 import {Global} from "./styles/styledGlobal"
+import BonusApp from './alternateSolution/BonusApp';
 
 
 function App() {
@@ -45,7 +46,8 @@ function App() {
           <Route path="/product/:testid" element={<Product cartProducts={cartProducts}setCartProducts={setCartProducts} />} />
           <Route path="/Checkout" element={<Checkout cartProducts={cartProducts}setCartProducts={setCartProducts}/>} /> 
           <Route path="/Contact" element={<Contact />} /> 
-          <Route path="/About" element={<About />} /> 
+          <Route path="/About" element={<About />} />
+          <Route path='/BonusApp' element={<BonusApp />} />
         </Routes>
 
         <Footer />
